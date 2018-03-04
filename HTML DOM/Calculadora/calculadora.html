@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Calculadora</title>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<script type="text/javascript">
+
+			function Calcular (){
+
+				var op =  document.getElementById('op').value;
+				var n1 = document.getElementById('n1').value;
+				var n2 = document.getElementById('n2').value;
+				var mostrar = null;
+
+				switch (op){
+
+					
+
+					case '1':
+						mostrar = n1-n2;
+
+						break;
+
+						case '2':
+						mostrar = n1+n2;
+
+						break;
+						case '3':
+						mostrar = n1*n2;
+
+						break;
+						case '4':
+						mostrar = n1/n2;
+
+						break;
+
+						default: 
+						alert('operação Inválida');
+						return false;
+						
+
+
+				}
+				// alert(mostrar);
+				document.getElementById('mostrar').value = mostrar;
+				
+
+			}
+
+
+			
+		</script>
+	</head>
+
+	<body style="background: #ccc;"> 
+		
+		<div class="container">
+			<div class="jumbotron jbt" style="background: #5882FA; margin: 20px; border-radius: 500px; border: none; " >
+				<h1 class="text-center" style="color: #fff;" >CALCULADORA</h1>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-4">
+					<input type="text" class="form-control" id="n1" placeholder="Digite um número" />
+				</div>
+
+				<div class="col-md-4">
+					<select id="op"  class="form-control">
+						<option value="">--Selecione uma operação</option>
+						<option value="1">Subtração</option>
+						<option  value="2">Adição</option>
+						<option  value="3">Multiplicação</option>
+						<option  value="4">Divisão</option>
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<input type="text" class="form-control" id="n2" placeholder="Digite um número"/>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-md-4"></div>
+
+				<div class="col-md-4"></div>
+
+				<div class="col-md-4">
+					<button type="button" onclick="Calcular();" class="btn btn-lg btn-primary pull-right">Calcular</button>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="well">
+				Resultado: <input type="text" id="mostrar" class="form-control" readonly/>
+			</div>
+		</div>
+	</body>
+</html>
